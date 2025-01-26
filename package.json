@@ -1,0 +1,35 @@
+{
+  "name": "ld-generator",
+  "version": "1.0.0",
+  "description": "A lightweight TypeScript library with no dependencies for generating Schema.org microdata in JSON-LD format, enabling easy integration of structured data for products, reviews, events, and more.",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "rollup -c",
+    "test": "jest"
+  },
+  "keywords": [
+    "schema.org",
+    "json-ld",
+    "microdata",
+    "typescript",
+    "structured-data"
+  ],
+  "author": "Askold Astakhov",
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.2",
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "@types/jest": "^29.5.14",
+    "jest": "^29.7.0",
+    "rollup": "^4.32.0",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "tslib": "^2.8.1",
+    "typescript": "^5.7.3"
+  }
+}

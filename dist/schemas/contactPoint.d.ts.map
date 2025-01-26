@@ -1,0 +1,1 @@
+{"version":3,"file":"contactPoint.d.ts","sourceRoot":"","sources":["../../src/schemas/contactPoint.ts"],"names":[],"mappings":"AAEA;;;;;;;;GAQG;AACH,MAAM,WAAW,YAAY;IACzB,OAAO,EAAE,cAAc,CAAC;IACxB,SAAS,EAAE,MAAM,CAAC;IAClB,WAAW,EAAE,MAAM,CAAC;CACvB;AAED,wBAAgB,kBAAkB,CAAC,YAAY,EAAE,IAAI,CAAC,YAAY,EAAE,UAAU,GAAG,OAAO,CAAC,GAAG,YAAY,CAQvG"}
