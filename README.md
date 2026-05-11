@@ -1,83 +1,87 @@
+<p align="center">
+  <img src="./media/ld-generator-logo.png" alt="LD Generator logo" width="900" />
+</p>
+
+[![npm version](https://img.shields.io/npm/v/ld-generator)](https://www.npmjs.com/package/ld-generator)
+[![MIT License](https://img.shields.io/npm/l/ld-generator)](./LICENSE.md)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)](./package.json)
+
 # ld-generator
 
-A lightweight TypeScript library for generating Schema.org microdata in JSON-LD format, enabling easy integration of
-structured data for products, reviews, events, and more.
+Typed Schema.org JSON-LD builders for TypeScript projects. The library returns plain JavaScript objects that are ready to serialize with `JSON.stringify(...)` and embed into HTML.
 
 ## Features
 
-- **Type Safety**: Built with TypeScript for enhanced type safety and autocompletion.
-- **Comprehensive Types**: Supports a wide range of Schema.org types including Product, Review, Event, Organization, and
-  more.
-- **Modular Design**: Each schema type is defined in separate modules for better organization and maintainability.
-- **Easy Integration**: Generate JSON-LD scripts ready to be inserted into your HTML.
-- **Well-Documented**: Includes JSDoc comments for easy reference and understanding.
+- Zero runtime dependencies
+- Typed factory functions for common Schema.org entities
+- Small modular API with one schema per file
+- ESM build output with declaration files
+- Works well with React, Next.js, and server-rendered HTML
 
 ## Installation
 
-You can install the library via npm:
+```bash
+npm install ld-generator
+```
 
-`npm install ld-generator`
+## Quick Start
 
-## Usage
+```tsx
+import {offer, product} from 'ld-generator';
 
-### Importing the Library
-
-You can import the necessary functions and types from the library as follows:
-
-### Creating a Product Schema
-
-Here's how to create a product schema:
-
-```typescript jsx
-import { productSchema } from 'ld-generator';
-
-const product = productSchema({
-    name: 'Sample Product',
-    description: 'This is a sample product description.',
-    image: 'https://example.com/image.jpg',
-    brand: 'Brand Name',
-    offers: {
-        '@type': 'Offer',
-        'price': 29.99,
-        priceCurrency: 'USD',
-        availability: 'InStock'
-    }
+const productData = product({
+  name: 'Sample Product',
+  description: 'A compact example product.',
+  image: 'https://example.com/image.jpg',
+  brand: 'Brand Name',
+  offers: offer({
+    price: 29.99,
+    priceCurrency: 'USD',
+    availability: 'InStock',
+  }),
 });
 
-const Component = () => {
-    return (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{__html: product}} />
-    );
+export function ProductSchema() {
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{__html: JSON.stringify(productData)}}
+    />
+  );
 }
 ```
 
-## API Reference
+Grouped convenience API is also available:
 
-### Functions
+```ts
+import {schema} from 'ld-generator';
 
-- `createProductSchema(productData): Product`
-    - Creates a JSON-LD schema for a product.
+const productData = schema.product({
+  name: 'Sample Product',
+  description: 'A compact example product.',
+  image: 'https://example.com/image.jpg',
+  brand: 'Brand Name',
+  offers: schema.offer({
+    price: 29.99,
+    priceCurrency: 'USD',
+  }),
+});
+```
 
-- `createEventSchema(eventData): Event`
-    - Creates a JSON-LD schema for an event.
+When bundle size matters, prefer direct named imports like `product` and `offer`.
 
-### Types
+## Documentation
 
-- `Product`: Interface representing a product schema.
-- `Event`: Interface representing an event schema.
+- [Documentation index](./docs/README.md)
+- [API reference](./docs/api.md)
+- [Development guide](./docs/development.md)
+- [Project context](./CONTEXT.md)
 
-Refer to the source code for additional types and schemas supported by the library.
+## Contributing
 
-## Development
-
-To build the library, run:
-
-`npm run build`
+Contributions are welcome. Start with [CONTRIBUTING.md](./CONTRIBUTING.md) and the [development guide](./docs/development.md).
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Author
-
-Askold Astakhov
+[MIT](./LICENSE.md)
