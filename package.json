@@ -1,6 +1,6 @@
 {
   "name": "ld-generator",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A lightweight TypeScript library with no dependencies for generating Schema.org microdata in JSON-LD format, enabling easy integration of structured data for products, reviews, events, and more.",
   "main": "dist/index.js",
   "module": "dist/index.js",

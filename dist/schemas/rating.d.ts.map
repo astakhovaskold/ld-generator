@@ -1,1 +1,0 @@
-{"version":3,"file":"rating.d.ts","sourceRoot":"","sources":["../../src/schemas/rating.ts"],"names":[],"mappings":"AAAA;;;;;;;;GAQG;AACH,MAAM,WAAW,MAAM;IACnB,OAAO,EAAE,QAAQ,CAAC;IAClB,WAAW,EAAE,MAAM,CAAC;IACpB,UAAU,CAAC,EAAE,MAAM,CAAC;CACvB;AAED,wBAAgB,YAAY,CAAC,MAAM,EAAE,IAAI,CAAC,MAAM,EAAE,OAAO,CAAC,GAAG,MAAM,CAOlE"}
