@@ -16,6 +16,44 @@ import {ratingSchema} from './schemas/rating';
 import {postalAddressSchema} from './schemas/postalAddress';
 import {contactPointSchema} from './schemas/contactPoint';
 
+const product = productSchema;
+const review = reviewSchema;
+const place = createPlaceSchema;
+const organization = organizationSchema;
+const localBusiness = localBusinessSchema;
+const breadcrumbList = breadcrumbListSchema;
+const faqPage = FAQPageSchema;
+const event = createEventSchema;
+const recipe = recipeSchema;
+const videoObject = videoObjectSchema;
+const imageObject = imageObjectSchema;
+const person = createPersonSchema;
+const listItem = listItemSchema;
+const offer = offerSchema;
+const rating = ratingSchema;
+const postalAddress = postalAddressSchema;
+const contactPoint = contactPointSchema;
+
+const schema = {
+    product,
+    review,
+    place,
+    organization,
+    localBusiness,
+    breadcrumbList,
+    faqPage,
+    event,
+    recipe,
+    videoObject,
+    imageObject,
+    person,
+    listItem,
+    offer,
+    rating,
+    postalAddress,
+    contactPoint,
+} as const;
+
 export {
     productSchema,
     reviewSchema,
@@ -34,4 +72,22 @@ export {
     ratingSchema,
     postalAddressSchema,
     contactPointSchema,
+    product,
+    review,
+    place,
+    organization,
+    localBusiness,
+    breadcrumbList,
+    faqPage,
+    event,
+    recipe,
+    videoObject,
+    imageObject,
+    person,
+    listItem,
+    offer,
+    rating,
+    postalAddress,
+    contactPoint,
+    schema,
 };

@@ -2,5 +2,5 @@ module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
   clearMocks: true,
-  testMatch: ['<rootDir>/**/__tests__/**/*.spec.ts'],
+  testMatch: ['<rootDir>/**/__tests__/**/*.(test|spec).ts'],
 };

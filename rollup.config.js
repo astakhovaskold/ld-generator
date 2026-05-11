@@ -19,8 +19,7 @@ export default defineConfig({
   plugins: [
     resolve(), // Resolves node_modules packages
     commonjs(), // Converts CommonJS modules to ES6
-    typescript({tsconfig: './tsconfig.json'}), // Compiles TypeScript files
+    typescript({tsconfig: './tsconfig.build.json'}), // Compiles publishable TypeScript files
     terser(), // Minifies the output for smaller bundle size
   ],
-  external: ['lodash'], // Specify external dependencies if any
 });
